@@ -1,0 +1,5 @@
+<p>Esta es la tabla del {{factor}}</p>
+
+<ul (click)="volverAcalculadora()">
+    <li *ngFor="let posicion of tabla; let i = index">{{factor}}*{{i}} = {{posicion}}</li>
+</ul>

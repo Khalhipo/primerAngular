@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     {nombre: "Antonio", apellido: "Molina"}
   ];
 
-  usuarioSeleccionado: object = null;
+  usuarioSeleccionado:  {nombre: "", apellido: ""} = null;
 
   selUser(usuario): void{
     this.usuarioSeleccionado = usuario;
