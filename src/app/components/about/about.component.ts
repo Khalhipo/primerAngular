@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  nombre: string;
+  apellidos: string;
+  dni: number;
+
+  constructor(private irHacia: Router) { }
 
   ngOnInit(): void {
+  }
+
+  navegarHacia(): void {
+    this.irHacia.navigate(['/hi/'+ this.nombre + '/' + this.apellidos]);
   }
 
 }

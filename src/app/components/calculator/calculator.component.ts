@@ -16,7 +16,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   navegarHacia(entrada): void{
-    this.irHacia.navigate(['/multiply/'+entrada]);
+    this.irHacia.navigate(['/multiply/'+ entrada]);
   }
 
 }

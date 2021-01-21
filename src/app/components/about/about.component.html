@@ -1,1 +1,5 @@
-<p>about works!</p>
+<input type="text" [(ngModel)]="nombre" placeholder="Tu nombre">
+<input type="text" [(ngModel)]="apellidos" placeholder="Tus apellidos">
+<button (click)="navegarHacia()">IR</button>
+<p>Calcular letra del DNI</p>
+<input type="number" [(ngModel)]="dni" placeholder="Introduce el NIF"><strong>{{dni|dni}}</strong>

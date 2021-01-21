@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
+import '@angular/common/locales/global/es'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,11 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { LotteryComponent } from './components/lottery/lottery.component';
 import { GenerateLotteryComponent } from './components/generate-lottery/generate-lottery.component';
 import { CalculatorComponent } from './components/calculator/calculator.component';
-import { MultiplyComponent } from './components/multiply/multiply.component'
+import { MultiplyComponent } from './components/multiply/multiply.component';
+import { HiComponent } from './components/hi/hi.component';
+import { PipesComponent } from './components/pipes/pipes.component';
+import { NumsPipe } from './pipes/nums.pipe';
+import { DniPipe } from './pipes/dni.pipe'
 
 @NgModule({
   declarations: [
@@ -21,14 +26,18 @@ import { MultiplyComponent } from './components/multiply/multiply.component'
     LotteryComponent,
     GenerateLotteryComponent,
     CalculatorComponent,
-    MultiplyComponent
+    MultiplyComponent,
+    HiComponent,
+    PipesComponent,
+    NumsPipe,
+    DniPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{provide:LOCALE_ID, useValue:"es"}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
