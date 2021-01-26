@@ -15,7 +15,8 @@ import { MultiplyComponent } from './components/multiply/multiply.component';
 import { HiComponent } from './components/hi/hi.component';
 import { PipesComponent } from './components/pipes/pipes.component';
 import { NumsPipe } from './pipes/nums.pipe';
-import { DniPipe } from './pipes/dni.pipe'
+import { DniPipe } from './pipes/dni.pipe';
+import { StructuresComponent } from './components/structures/structures.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DniPipe } from './pipes/dni.pipe'
     HiComponent,
     PipesComponent,
     NumsPipe,
-    DniPipe
+    DniPipe,
+    StructuresComponent
   ],
   imports: [
     BrowserModule,

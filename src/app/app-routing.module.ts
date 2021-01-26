@@ -7,6 +7,7 @@ import { CalculatorComponent } from './components/calculator/calculator.componen
 import { MultiplyComponent } from './components/multiply/multiply.component';
 import { HiComponent } from './components/hi/hi.component';
 import { PipesComponent } from './components/pipes/pipes.component';
+import { StructuresComponent } from './components/structures/structures.component';
 
 const routes: Routes = [
   {path: "", component:HomeComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: "multiply/:factor", component:MultiplyComponent},
   {path: "hi/:nombre/:apellidos", component:HiComponent},
   {path: "pipes", component:PipesComponent},
+  {path: "structures", component:StructuresComponent},
   {path: "**", component:HomeComponent}  // AQUÍ LE PONEMOS POR DEFECTO EL HOME SI LA PÁGINA NO EXISTE
 ];
 

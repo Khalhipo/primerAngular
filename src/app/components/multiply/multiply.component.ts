@@ -17,7 +17,7 @@ export class MultiplyComponent implements OnInit {
   ngOnInit(): void {
     this.factor = parseInt(this.rutaActiva.snapshot.paramMap.get("factor"));
     if(!isNaN(this.factor)){
-      for(let index = 1; index<11; index++){
+      for(let index = 0; index<10; index++){
         this.tabla.push(this.factor*index);
       }
     }

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipesComponent implements OnInit {
 
-  usuario: string = "javier bueno martínez";
+  usuario: string = "pepe luis dominguez";
   mes: string = "ENERO";
   texto: string = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, perferendis.";
   fecha: Date = new Date();
