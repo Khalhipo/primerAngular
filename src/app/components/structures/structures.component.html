@@ -72,3 +72,20 @@
         </tr>
     </tbody>
 </table>
+<hr>
+<h6>Switch</h6>
+<input type="number" name="num1" [(ngModel)]="num1" placeholder="Número 1">
+<input type="number" name="num2" [(ngModel)]="num2" placeholder="Número 2">
+<select name="operador" [(ngModel)]="operador">
+    <option *ngFor="let operacion of operaciones" [value]="operacion">{{operacion}}</option>
+</select>
+
+<!--Con MicroSintaxis-->
+<div [ngSwitch]="operador">
+    <span *ngSwitchCase='"suma"'>{{num1+num2}}</span>
+    <span *ngSwitchCase='"resta"'>{{num1-num2}}</span>
+    <span *ngSwitchCase='"multiplicacion"'>{{num1*num2}}</span>
+    <span *ngSwitchCase='"division"'>{{num1/num2}}</span>
+    <span *ngSwitchDefault>Selecciona una operación</span>
+</div>
+

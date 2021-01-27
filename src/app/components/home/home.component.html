@@ -28,5 +28,10 @@
     </ul>
 </div>
 
+<ul>
+    <li (click)="selUser(usuario)" *ngFor="let usuario of usuarios2">{{usuario.nombre + " " + usuario.apellido}}</li>
+    <p *ngIf="usuarioSeleccionado != null">El usuario seleccionado es {{usuarioSeleccionado.nombre + " " + usuarioSeleccionado.apellido}}</p>
+</ul>
+
 
 

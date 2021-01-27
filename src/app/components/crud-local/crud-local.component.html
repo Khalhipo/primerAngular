@@ -1,0 +1,58 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>titulo</th>
+            <th>contenido</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let nota of notas" (click)="notaSel = nota">
+            <td>{{nota.id}}</td>
+            <td>{{nota.titulo}}</td>
+            <td>{{nota.contenido}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<input type="text" [(ngModel)]="notaNueva.titulo" placeholder="Título">
+<input type="text" [(ngModel)]="notaNueva.contenido" placeholder="Contenido">
+<button (click)="insertarNota()">Insertar Nota</button>
+<br>
+
+<input type="text" [(ngModel)]="notaSel.titulo">
+<input type="text" [(ngModel)]="notaSel.contenido">
+<button (click)="editarNota()">Editar nota</button>
+<button (click)="eliminarNota()">Eliminar nota</button>
+<hr>
+<h6>Formulario Coches</h6>
+<table class="table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>marca</th>
+            <th>modelo</th>
+            <th>cv</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let coche of coches" (click)="cocheSel = coche">
+            <td>{{coche.id}}</td>
+            <td>{{coche.marca}}</td>
+            <td>{{coche.modelo}}</td>
+            <td>{{coche.cv}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<input type="text" [(ngModel)]="cocheNuevo.marca" placeholder="Marca">
+<input type="text" [(ngModel)]="cocheNuevo.modelo" placeholder="Modelo">
+<input type="text" [(ngModel)]="cocheNuevo.cv" placeholder="CV">
+<button (click)="insertarCoche()">Insertar coche</button>
+<br>
+
+<input type="text" [(ngModel)]="cocheSel.marca" placeholder="Marca">
+<input type="text" [(ngModel)]="cocheSel.modelo" placeholder="Modelo">
+<input type="text" [(ngModel)]="cocheSel.cv" placeholder="CV">
+<button (click)="editarCoche()">Editar coche</button>
+<button (click)="eliminarCoche()">Eliminar coche</button>
