@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { LotteryComponent } from './components/lottery/lottery.component';
 import { GenerateLotteryComponent } from './components/generate-lottery/generate-lottery.component';
@@ -18,7 +18,8 @@ import { NumsPipe } from './pipes/nums.pipe';
 import { DniPipe } from './pipes/dni.pipe';
 import { StructuresComponent } from './components/structures/structures.component';
 import { FormClassComponent } from './components/form-class/form-class.component';
-import { CrudLocalComponent } from './components/crud-local/crud-local.component'
+import { CrudLocalComponent } from './components/crud-local/crud-local.component';
+import { RegisterComponent } from './components/register/register.component'
 
 @NgModule({
   declarations: [
@@ -36,12 +37,14 @@ import { CrudLocalComponent } from './components/crud-local/crud-local.component
     DniPipe,
     StructuresComponent,
     FormClassComponent,
-    CrudLocalComponent
+    CrudLocalComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{provide:LOCALE_ID, useValue:"es"}],
   bootstrap: [AppComponent]

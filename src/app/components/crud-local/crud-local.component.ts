@@ -12,13 +12,13 @@ export class CrudLocalComponent implements OnInit {
 
   notaNueva: Nota = new Nota();
   notas: Nota[] = [];
-  indice: number = 1;
+  indice: number = -1;
   notaSel: Nota = new Nota();
 
   //Coches
   coches: Coche[] = [];
   cocheNuevo: Coche = new Coche();
-  indice_coche: number = 1;
+  indice_coche: number = -1;
   cocheSel: Coche = new Coche();
 
   constructor() { }

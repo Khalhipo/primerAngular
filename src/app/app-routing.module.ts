@@ -10,6 +10,7 @@ import { PipesComponent } from './components/pipes/pipes.component';
 import { StructuresComponent } from './components/structures/structures.component';
 import { FormClassComponent } from './components/form-class/form-class.component';
 import { CrudLocalComponent } from './components/crud-local/crud-local.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {path: "", component:HomeComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: "structures", component:StructuresComponent},
   {path: "form", component:FormClassComponent},
   {path: "crud", component:CrudLocalComponent},
+  {path: "register", component:RegisterComponent},
   {path: "**", component:HomeComponent}  // AQUÍ LE PONEMOS POR DEFECTO EL HOME SI LA PÁGINA NO EXISTE
 ];
 
