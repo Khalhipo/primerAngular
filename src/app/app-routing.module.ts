@@ -11,6 +11,7 @@ import { StructuresComponent } from './components/structures/structures.componen
 import { FormClassComponent } from './components/form-class/form-class.component';
 import { CrudLocalComponent } from './components/crud-local/crud-local.component';
 import { RegisterComponent } from './components/register/register.component';
+import { CrudComponent } from './components/crud/crud.component';
 
 const routes: Routes = [
   {path: "", component:HomeComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: "pipes", component:PipesComponent},
   {path: "structures", component:StructuresComponent},
   {path: "form", component:FormClassComponent},
-  {path: "crud", component:CrudLocalComponent},
+  {path: "crudLocal", component:CrudLocalComponent},
+  {path: "crud", component:CrudComponent},
   {path: "register", component:RegisterComponent},
   {path: "**", component:HomeComponent}  // AQUÍ LE PONEMOS POR DEFECTO EL HOME SI LA PÁGINA NO EXISTE
 ];

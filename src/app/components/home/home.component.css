@@ -1,0 +1,44 @@
+#contenedor-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "texto suma"
+                "letras obj";
+    gap: 1.5rem;
+}
+
+#contenedor-texto {
+    grid-area: texto;
+    border: 2px solid black;
+    text-align: center;
+    margin: auto;
+}
+
+#contenedor-suma {
+    grid-area: suma;
+    text-align: center;
+    border: 2px solid black;
+    margin: auto;
+}
+
+#contenedor-arrayLetras {
+    grid-area: letras;
+    text-align: center;
+    border: 2px solid black;
+    margin: auto;
+    list-style-type: none;
+}
+
+#contenedor-arrayObj {
+    grid-area: obj;
+    text-align: center;
+    border: 2px solid black;
+    margin: auto;
+    list-style: none;
+    list-style-type:square;
+}
+
+footer {
+height: 50px;
+text-align: center;
+}

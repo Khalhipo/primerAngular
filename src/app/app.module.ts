@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
-import '@angular/common/locales/global/es'
+import '@angular/common/locales/global/es';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +21,8 @@ import { DniPipe } from './pipes/dni.pipe';
 import { StructuresComponent } from './components/structures/structures.component';
 import { FormClassComponent } from './components/form-class/form-class.component';
 import { CrudLocalComponent } from './components/crud-local/crud-local.component';
-import { RegisterComponent } from './components/register/register.component'
+import { RegisterComponent } from './components/register/register.component';
+import { CrudComponent } from './components/crud/crud.component';
 
 @NgModule({
   declarations: [
@@ -38,13 +41,15 @@ import { RegisterComponent } from './components/register/register.component'
     StructuresComponent,
     FormClassComponent,
     CrudLocalComponent,
-    RegisterComponent
+    RegisterComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [{provide:LOCALE_ID, useValue:"es"}],
   bootstrap: [AppComponent]

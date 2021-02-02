@@ -1,0 +1,9 @@
+<ul>
+    <li *ngFor="let nota of notas">{{nota.titulo}} {{nota.contenido}}</li>
+</ul>
+<br>
+<form>
+    <input type="text" [(ngModel)]="notaNueva.titulo" placeholder="Título">
+    <input type="text" [(ngModel)]="notaNueva.contenido" placeholder="Contenido">
+    <button type="submit" (click)="crearNota()">Insertar Nota</button>
+</form>

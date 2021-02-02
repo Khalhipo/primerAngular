@@ -1,37 +1,52 @@
 <div class="jumbotron">
-    <h1 class="display-3">Jumbo heading</h1>
-    <p class="lead">Jumbo helper text</p>
+    <h1 class="display-3">Tutorial Angular</h1>
+    <p class="lead">Todas las principales características del framework</p>
     <hr class="my-2">
-    <p>More info</p>
+    <p>Más información</p>
     <p class="lead">
         <a class="btn btn-primary btn-lg" routerLink="/about" role="button">About</a>
     </p>
 </div>
 
-<div class="container">
+<div class="container-fluid" id="contenedor-info">
+
+<div id="contenedor-texto">
+    <h2>Prueba a introducir texto y sorpréndete con el resultado</h2>
     <input type="text" [(ngModel)]="variable">
     <h3>{{variable}}</h3>
 </div>
-<div class="container">
+<div id="contenedor-suma">
+    <h2>Prueba a introducir dos números y obtendrás la suma</h2>
     <input type="number" [(ngModel)]="num1">
     <input type="number" [(ngModel)]="num2">
     <h3>{{num1+num2}}</h3>
     <p *ngIf="num1 == 0">El num1 es un 0</p>
-    <h3>Array de letras</h3>
+</div>
+
+<div id="contenedor-arrayLetras">
+    <h3>Con *ngFor puedes mostrar de forma fácil un Array de letras</h3>
     <ul>
         <li *ngFor="let letra of letras">{{letra}}</li>
     </ul>
-    <h3>Array de objetos</h3>
+</div>
+
+<div id="contenedor-arrayObj">
+    <h3>Con *ngFor también puedes mostrar Array de objetos</h3>
     <ul>
+        <h5>Mostrar usuarios sin tipado en el componente</h5>
         <li (click)="selUser(usuario)" *ngFor="let usuario of usuarios">{{usuario.nombre + " " + usuario.apellido}}</li>
+        <p *ngIf="usuarioSeleccionado != null">El usuario seleccionado es {{usuarioSeleccionado.nombre + " " + usuarioSeleccionado.apellido}}</p>
+    </ul>
+    <ul>
+        <h5>Mostrar usuarios con tipado en el componente</h5>
+        <li (click)="selUser(usuario)" *ngFor="let usuario of usuarios2">{{usuario.nombre + " " + usuario.apellido}}</li>
         <p *ngIf="usuarioSeleccionado != null">El usuario seleccionado es {{usuarioSeleccionado.nombre + " " + usuarioSeleccionado.apellido}}</p>
     </ul>
 </div>
 
-<ul>
-    <li (click)="selUser(usuario)" *ngFor="let usuario of usuarios2">{{usuario.nombre + " " + usuario.apellido}}</li>
-    <p *ngIf="usuarioSeleccionado != null">El usuario seleccionado es {{usuarioSeleccionado.nombre + " " + usuarioSeleccionado.apellido}}</p>
-</ul>
+</div>
 
+<footer>
+</footer>
 
 

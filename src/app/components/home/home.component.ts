@@ -8,7 +8,7 @@ import { User } from 'src/app/models/user';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  variable: string = "texto de prueba";
+  variable: string = "Texto de prueba...";
   num1: number = 0;
   num2: number = 0;
   letras: string[] = ["a","b","c"];
