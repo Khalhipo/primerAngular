@@ -9,10 +9,13 @@ import { NotasService } from 'src/app/services/notas.service';
   styleUrls: ['./crud.component.css']
 })
 export class CrudComponent implements OnInit {
-
+  notaCreada: boolean = false;
+  temporizador: any = null;
+  busqueda: string = '';
   notas: Note[] = [];
-  notaNueva: Note = {titulo: "hola", contenido: "que tal estas"};
+  notaNueva: Note = new Note();
   formNuevo: FormGroup = new FormGroup({
+    id: new FormControl(),
     titulo: new FormControl("", Validators.required),
     contenido: new FormControl("", Validators.required),
   });
@@ -33,14 +36,57 @@ export class CrudComponent implements OnInit {
     );
   }
 
-  crearNota(): void {
-    this.servicio.insertarNota(this.notaNueva).subscribe(
+  crearNota(entrada): void {
+    this.servicio.insertarNota(entrada).subscribe(
       respuesta => {
       console.log(respuesta);
+      this.formNuevo.reset();
       this.obtenerNotas();
+      this.notaCreada = true;
+      setTimeout(() => {
+        this.notaCreada = false;
+      }, 2000);
     },
     error => console.log(error)
     );
+  }
+
+  eliminarNota(): void {
+    this.servicio.borrarNota(this.formNuevo.value.id).subscribe(
+      respuesta => {
+        console.log(respuesta);
+        this.formNuevo.reset();
+        this.obtenerNotas();
+      },
+      error => console.log(error)
+    );
+  }
+
+  editarNota(): void {
+    this.servicio.editarNota(this.formNuevo.value).subscribe(
+      respuesta => {
+        console.log(respuesta);
+        this.formNuevo.reset();
+        this.obtenerNotas();
+      },
+      error => console.log(error)
+    );
+  }
+
+  buscarNotas(): void {
+    this.servicio.buscarNotas(this.busqueda).subscribe(
+      respuesta => {
+        console.log(respuesta);
+        this.notas = respuesta;
+      },
+      error => console.log(error)
+    );
+  }
+
+  buscarConRetraso(): void {
+    if(this.temporizador==null){
+      this.temporizador = setTimeout(()=>{this.buscarNotas();this.temporizador=null},3000)
+    }
   }
 
 }

@@ -1,9 +1,31 @@
 <ul>
-    <li *ngFor="let nota of notas">{{nota.titulo}} {{nota.contenido}}</li>
+    <li *ngFor="let nota of notas" (click)="formNuevo.patchValue(nota)">{{nota.titulo}} {{nota.contenido}}</li>
 </ul>
 <br>
-<form>
-    <input type="text" [(ngModel)]="notaNueva.titulo" placeholder="Título">
-    <input type="text" [(ngModel)]="notaNueva.contenido" placeholder="Contenido">
-    <button type="submit" (click)="crearNota()">Insertar Nota</button>
+<div class="alert alert-primary" *ngIf="notaCreada" role="alert">
+    <strong>Nota creada correctamente</strong>
+</div>
+<h5>Formulario con formGroup</h5>
+<form [formGroup]="formNuevo" (ngSubmit)="crearNota(formNuevo.value)">
+    <input class="form-control" type="text" formControlName="titulo" placeholder="Título">
+    <input class="form-control" type="text" formControlName="contenido" placeholder="Contenido">
+    <button *ngIf="!formNuevo.value.id; else editar" type="submit" [disabled]="formNuevo.invalid">Crear una nota</button>
+    <ng-template #editar>
+        <button type="button" [disabled]="!formNuevo.value.id" (click)="eliminarNota()">Eliminar una nota</button>
+        <button type="button" [disabled]="formNuevo.invalid" (click)="editarNota()">Editar una nota</button>
+        <button type="button" (click)="formNuevo.reset()">Cancelar</button>
+    </ng-template>
 </form>
+<hr>
+<h5>Formulario con ngModel</h5>
+<div class="input-group">
+    <input class="form-control" type="text" [(ngModel)]="notaNueva.titulo" placeholder="Título">
+    <input class="form-control" type="text" [(ngModel)]="notaNueva.contenido" placeholder="Contenido">
+    <button class="btn btn-primary btn-block" (click)="crearNota(notaNueva)">Insertar Nota</button>
+</div>
+<h5>Búsqueda de notas</h5>
+<div class="input-group">
+    <input (input)="buscarConRetraso()" class="form-control" type="text" [(ngModel)]="busqueda" placeholder="Buscar">
+    <button class="btn btn-primary btn-block" (click)="buscarNotas()">Buscar Nota</button>
+</div>
+

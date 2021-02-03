@@ -1,6 +1,12 @@
-<input type="text" [(ngModel)]="nombre" placeholder="Tu nombre">
-<input type="text" [(ngModel)]="apellidos" placeholder="Tus apellidos">
-<button (click)="navegarHacia()">IR</button>
-<p>Calcular letra del DNI</p>
-<input type="number" [(ngModel)]="dni" placeholder="Introduce el NIF">
-<strong *ngIf="dni!=null">{{dni|dni}}</strong>
+<div class="container col-6 mx-auto text-center">
+<h5>Introduce tu nombre y apellidos</h5> 
+<input class="form-control" type="text" [(ngModel)]="nombre" placeholder="Tu nombre">
+<input class="form-control" type="text" [(ngModel)]="apellidos" placeholder="Tus apellidos">
+<button class="btn btn-primary btn-block" (click)="navegarHacia()">IR</button>
+</div>
+<hr>
+<div class="container col-6 mx-auto text-center">
+<h5>Calcular letra del DNI</h5>
+<input class="form-control" type="number" [(ngModel)]="dni" placeholder="Introduce el NIF">
+<strong *ngIf="dni!=null">Tu letra del DNI es: {{dni|dni}}</strong>
+</div>
