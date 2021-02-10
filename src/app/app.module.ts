@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import '@angular/common/locales/global/es';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +23,10 @@ import { FormClassComponent } from './components/form-class/form-class.component
 import { CrudLocalComponent } from './components/crud-local/crud-local.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CrudComponent } from './components/crud/crud.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { PerfilComponent } from './components/auth/perfil/perfil.component';
+import { RegistroComponent } from './components/auth/registro/registro.component';
+import { EnviarTokenInterceptor } from './auth/enviar-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,10 @@ import { CrudComponent } from './components/crud/crud.component';
     FormClassComponent,
     CrudLocalComponent,
     RegisterComponent,
-    CrudComponent
+    CrudComponent,
+    LoginComponent,
+    PerfilComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,10 @@ import { CrudComponent } from './components/crud/crud.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [{provide:LOCALE_ID, useValue:"es"}],
+  providers: [
+  {provide:LOCALE_ID, useValue:"es"}, 
+  {provide: HTTP_INTERCEPTORS, useClass:EnviarTokenInterceptor, multi:true}
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

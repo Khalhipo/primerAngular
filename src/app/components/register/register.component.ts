@@ -44,6 +44,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+
   get nombre1(){
     return this.formRegister.get("nombre");
   }

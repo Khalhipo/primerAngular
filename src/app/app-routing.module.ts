@@ -12,6 +12,10 @@ import { FormClassComponent } from './components/form-class/form-class.component
 import { CrudLocalComponent } from './components/crud-local/crud-local.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CrudComponent } from './components/crud/crud.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { PerfilComponent } from './components/auth/perfil/perfil.component';
+import { RegistroComponent } from './components/auth/registro/registro.component';
+import { UserRouterGuard } from './auth/user-router.guard';
 
 const routes: Routes = [
   {path: "", component:HomeComponent},
@@ -25,7 +29,10 @@ const routes: Routes = [
   {path: "form", component:FormClassComponent},
   {path: "crudLocal", component:CrudLocalComponent},
   {path: "crud", component:CrudComponent},
+  {path: "registro", component:RegistroComponent},
   {path: "register", component:RegisterComponent},
+  {path: "login", component:LoginComponent},
+  {path: "perfil", component:PerfilComponent, canActivate:[UserRouterGuard]},
   {path: "**", component:HomeComponent}  // AQUÍ LE PONEMOS POR DEFECTO EL HOME SI LA PÁGINA NO EXISTE
 ];
 
