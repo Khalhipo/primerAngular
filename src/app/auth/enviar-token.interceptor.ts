@@ -22,15 +22,15 @@ export class EnviarTokenInterceptor implements HttpInterceptor {
       peticion = request.clone({
       setHeaders: {Authorization: this.serviceUsuario.leerToken()}
     })
+  }
     return next.handle(peticion).pipe(
       catchError((err: HttpErrorResponse) =>{
         if(err.status === 401){
           this.serviceUsuario.logOut();
           this.irHacia.navigate(['/login']);
         }
-        return throwError(err);
+        return throwError(err)
       })
     )
     }
   }
-}

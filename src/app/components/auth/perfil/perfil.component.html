@@ -1,1 +1,35 @@
-<p>perfil works!</p>
+<div class="card">
+    <div class="card-header h5 text-center">Mi Perfil</div>
+    <div class="card-body">
+        <p class="card-text">Nombre: {{perfil.nombre}}</p>
+        <p class="card-text">Apellidos: {{perfil.apellidos}}</p>
+        <p class="card-text">DNI: {{perfil.dni}}</p>
+        <p class="card-text">Teléfono: {{perfil.telefono}}</p>
+        <p class="card-text">Email: {{perfil.email}}</p>
+        <button (click)="mostrarEditar=!mostrarEditar;">Editar usuario</button>
+        <button (click)="mostrarEliminar=!mostrarEliminar;">Eliminar usuario</button>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body" *ngIf="mostrarEditar">
+
+        <form [formGroup]="formPerfil" (submit)="editarPerfil()">
+            <input type="text" formControlName="nombre" placeholder="Nombre"><br>
+            <input type="text" formControlName="apellidos" placeholder="Apellidos"><br>
+            <input type="text" formControlName="password" placeholder="Password"><br>
+            <input type="text" formControlName="email" placeholder="Email"><br>
+            <input type="text" formControlName="telefono" placeholder="Teléfono"><br>
+            <button [disabled]="formPerfil.invalid" type="submit">Guardar cambios</button>
+        </form>
+
+        <button (click)="mostrarEditar=!mostrarEditar">Cancelar</button>
+    </div>
+</div>
+<div class="card" *ngIf="mostrarEliminar">
+    <div class="card-header h5 text-center">Para eliminar tu perfil introduce tu email</div>
+    <div class="card-body">
+        <input type="text" [(ngModel)]="inputBorrar" placeholder="Email...">
+        <button (click)="mostrarEliminar=!mostrarEliminar; inputBorrar=''">Cancelar</button>
+        <button (click)="eliminarUsuario()" [disabled]="inputBorrar!=perfil.email">Eliminar</button>
+    </div>
+</div>

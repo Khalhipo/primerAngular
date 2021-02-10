@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { LoginComponent } from '../components/auth/login/login.component';
 import { accesoUsuario, User } from '../interfaces/user';
 
-const url = 'http://localhost:3000/user';
+const url = 'http://localhost:3000/user/';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +17,19 @@ export class UserService {
   }
 
   acceso(usuario: accesoUsuario): Observable<any> {
-    return this.http.post(url+'/login/', usuario);
+    return this.http.post(url+'login', usuario);
+  }
+
+  obtenerPerfil(): Observable<any> {
+    return this.http.get(url);
+  }
+
+  editarPerfil(usuario: User): Observable<any> {
+    return this.http.put(url,usuario);
+  }
+
+  eliminarUsuario(): Observable<any> {
+    return this.http.delete(url);
   }
 
   guardarToken(token: string): void {
@@ -35,6 +47,7 @@ export class UserService {
   leerToken(): string {
     return localStorage.getItem('userToken'); 
   }
+
 
 
 }
