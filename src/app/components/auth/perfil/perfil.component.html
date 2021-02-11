@@ -6,6 +6,7 @@
         <p class="card-text">DNI: {{perfil.dni}}</p>
         <p class="card-text">Teléfono: {{perfil.telefono}}</p>
         <p class="card-text">Email: {{perfil.email}}</p>
+        <img src="{{perfil.imgSrc}}" width="200px" *ngIf="perfil.imgSrc"><br>
         <button (click)="mostrarEditar=!mostrarEditar;">Editar usuario</button>
         <button (click)="mostrarEliminar=!mostrarEliminar;">Eliminar usuario</button>
     </div>
@@ -33,3 +34,12 @@
         <button (click)="eliminarUsuario()" [disabled]="inputBorrar!=perfil.email">Eliminar</button>
     </div>
 </div>
+
+<form [formGroup]="formImagen" (submit)="subirImagen()">
+    <input type="file" formControlName="imagen" (change)="cambiaImagen($event)">
+    <button type="submit">Subir imagen de perfil</button>
+</form>
+<hr>
+<!--Con parámetros-->
+<input type="file" (change)="tengoFoto($event)">
+<button type="button" (click)="subirFoto()">Subir imagen por parámetro</button>

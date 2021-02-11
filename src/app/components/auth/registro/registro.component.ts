@@ -12,6 +12,8 @@ import { telefonoValido } from 'src/app/validaciones/tlf-valido';
 })
 export class RegistroComponent implements OnInit {
 
+  mensaje: string = '';
+
   formRegister = this.fb.group({
     nombre:[''],
     apellidos:[''],
@@ -34,7 +36,10 @@ export class RegistroComponent implements OnInit {
           this.servicioUsuario.guardarToken(respuesta);
           this.irHacia.navigate(['/perfil']);
         },
-        error => console.log(error)
+        error => {
+          console.log(error)
+          this.mensaje = error.error.error
+        }
       );
     }
     else alert("Las contraseñas no coinciden");

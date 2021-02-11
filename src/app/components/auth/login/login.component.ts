@@ -10,6 +10,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent implements OnInit {
 
+  mensaje: string = '';
+
   formLogin = this.fb.group({
     password:['',[Validators.required]],
     email:['', [Validators.required]]
@@ -31,7 +33,10 @@ export class LoginComponent implements OnInit {
         this.servicioUsuario.guardarToken(respuesta);
         this.irHacia.navigate(['/perfil']);
       },
-      error => console.log(error)
+      error => {
+      console.log(error)
+      this.mensaje = error.error.error
+      }
     )
   }
 

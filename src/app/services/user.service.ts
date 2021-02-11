@@ -4,7 +4,11 @@ import { Observable } from 'rxjs';
 import { LoginComponent } from '../components/auth/login/login.component';
 import { accesoUsuario, User } from '../interfaces/user';
 
+/*Esta para SEQUELIZE
 const url = 'http://localhost:3000/user/';
+*/
+//Esta para php
+const url = 'http://localhost/backendphp/user/';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,9 +19,16 @@ export class UserService {
   registrar(usuario: User): Observable<any> {
     return this.http.post(url,usuario);
   }
-
+/*
+SEQUALIZE
   acceso(usuario: accesoUsuario): Observable<any> {
     return this.http.post(url+'login', usuario);
+  }
+*/
+
+//La de abajo para php
+  acceso(usuario: accesoUsuario): Observable<any> {
+    return this.http.post(url+'login/', usuario);
   }
 
   obtenerPerfil(): Observable<any> {
@@ -30,6 +41,11 @@ export class UserService {
 
   eliminarUsuario(): Observable<any> {
     return this.http.delete(url);
+  }
+
+  //Solo para backend PHP
+  subirImagen(entrada): Observable<any> {
+    return this.http.post(url+'image/',entrada);
   }
 
   guardarToken(token: string): void {

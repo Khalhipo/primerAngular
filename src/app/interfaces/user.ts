@@ -5,7 +5,8 @@ export interface User {
     password?: string,
     email?: string,
     telefono?: number,
-    dni?: string 
+    dni?: string,
+    imgSrc?: string
 }
 
 export interface accesoUsuario {

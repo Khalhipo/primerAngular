@@ -20,6 +20,9 @@ export class PerfilComponent implements OnInit {
     telefono:[undefined, [telefonoValido()]]
   })
 
+  formImagen = this.fb.group({
+    imagen:['',Validators.required]
+  })
 
   inputBorrar: string = '';
   mostrarEditar: boolean = false;
@@ -63,6 +66,46 @@ export class PerfilComponent implements OnInit {
         console.log(respuesta);
         this.servicioUsuario.logOut();
         this.irHacia.navigate(['/login']);
+      },
+      error => console.log(error)
+    )
+  }
+
+  cambiaImagen(evento): void {
+    if(evento.target.files){
+      console.log("datos" + evento.target.files[0]);
+      this.formImagen.get('imagen').setValue(evento.target.files[0]);
+    }
+  }
+
+  subirImagen(): void {
+    const formData = new FormData()
+    formData.append('imagen',this.formImagen.get('imagen').value);
+    this.servicioUsuario.subirImagen(formData).subscribe(
+      respuesta => {
+        console.log(respuesta)
+        this.cargarPerfil()
+      },
+      error => console.log(error)
+    )
+  }
+
+  //Subir foto con parámetro
+  foto: File
+  tengoFoto(evento): void {
+    if(evento.target.files){
+      console.log("datos" + evento.target.files[0]);
+      this.foto = evento.target.files[0];
+    }
+  }
+
+  subirFoto(): void {
+    const formData = new FormData()
+    formData.append('imagen',this.foto);
+    this.servicioUsuario.subirImagen(formData).subscribe(
+      respuesta => {
+        console.log(respuesta)
+        this.cargarPerfil()
       },
       error => console.log(error)
     )

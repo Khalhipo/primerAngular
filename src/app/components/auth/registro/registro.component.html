@@ -1,4 +1,7 @@
 <p>Formulario con FormBuilder</p>
+<div class="alert alert-danger" role="alert" *ngIf="mensaje">
+    <strong>{{mensaje}}</strong>
+</div>
 <form [formGroup]="formRegister" (submit)="submit()">
     <input type="text" formControlName="nombre" placeholder="Nombre"><br>
     <input type="text" formControlName="apellidos" placeholder="Apellidos"><br>
