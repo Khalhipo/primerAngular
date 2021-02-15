@@ -1,8 +1,24 @@
-<input type="text" [(ngModel)]="user.nombre" placeholder="Nombre">
-<input type="text" [(ngModel)]="user.apellido" placeholder="apellido">
-<input type="number" [(ngModel)]="user.edad" placeholder="Edad">
-<button (click)="insertar()">Insertar</button>
-<ul>
-    <li *ngFor="let user of users" (click)="addP(user)">{{user.nombre}} {{user.apellido}} {{user.edad}}</li>
-</ul>
-<p *ngIf="usuarioSel!=null">El usuario seleccionado es {{usuarioSel.nombre}} {{usuarioSel.apellido}} {{usuarioSel.edad}} </p>
+
+
+
+<div class="card mx-auto m-4" style="width: 70vh;">
+    <div class="card-header">
+        <h4 class="card-title text-center">Inserta nuevos registros</h4>
+    </div>
+    <div class="card-body">
+        <input class="form-control" type="text" [(ngModel)]="user.nombre" placeholder="Nombre">
+        <input class="form-control" type="text" [(ngModel)]="user.apellido" placeholder="Apellido">
+        <input class="form-control" type="number" [(ngModel)]="user.edad" placeholder="Edad">
+        <button class="btn btn-primary btn-block" (click)="insertar()">Insertar</button>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let user of users" (click)="addP(user)">{{user.nombre}} {{user.apellido}} {{user.edad}}</li>
+    </ul>
+</div>
+
+
+
+<div *ngIf="usuarioSel!=null" class="alert alert-primary mx-auto" style="width: 100vh;" role="alert">
+    <p >El usuario seleccionado es {{usuarioSel.nombre}} {{usuarioSel.apellido}} {{usuarioSel.edad}}
+    </p>
+  </div>

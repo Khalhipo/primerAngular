@@ -26,7 +26,10 @@ export class FormClassComponent implements OnInit {
   }
 
   addP(user): void {
-    this.usuarioSel = user;
+    if(user.nombre!=""){
+      this.usuarioSel = user;
+    }
+    
   }
 
 }

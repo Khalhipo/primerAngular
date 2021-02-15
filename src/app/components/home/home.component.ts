@@ -6,7 +6,7 @@ import { User } from 'src/app/models/user';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
 
   variable: string = "Texto de prueba...";
   num1: number = 0;
@@ -36,11 +36,5 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
   }
-
-  ngOnDestroy(): void {
-    alert("Sayonara, Baby");
-  }
-
-
 
 }

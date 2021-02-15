@@ -1,16 +1,28 @@
-<button (click)="numero1.obtenAleatorio();numero2.obtenAleatorio()">Obtener número</button>
-
-
-<app-generate-lottery #numero1></app-generate-lottery>
-
-<app-generate-lottery #numero2></app-generate-lottery>
-
-
-<p>El número ganador es: {{numero1.digito}}{{numero2.digito}}</p>
-
-<p *ngIf="numero1.digito==numero2.digito;else habibi">PREMIO</p>
-<ng-template #habibi>SIGUE JUGANDO</ng-template>
-<p *ngIf="numero1.digito!=numero2.digito">SIGUE JUGANDO</p>
-
-<app-generate-lottery entrada = "1323"></app-generate-lottery>
-<app-generate-lottery [objetoEntrada] = "objetoEntrada"></app-generate-lottery>
+<div class="card  m-4 text-center mx-auto" style="width: 70vh;">
+    <div class="card-header">Comunicar componentes</div>
+    <div class="card-body">
+        <h5 class="card-title">Juguemos a la lotería!</h5>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <app-generate-lottery #numero1></app-generate-lottery>
+              </div>
+              <div class="col-md-6">
+                <app-generate-lottery #numero2></app-generate-lottery>
+              </div>
+            </div>
+          </div>
+        <p *ngIf="numero1.digito&&(numero1.digito==numero2.digito);else habibi">PREMIO</p>
+        <ng-template #habibi>
+            <p *ngIf="numero1.digito>=0; else iniciar">SIGUE JUGANDO</p>
+            <ng-template #iniciar>
+                <p>Pulsa para empezar a jugar</p>
+            </ng-template>
+        </ng-template>
+        <p *ngIf="numero1.digito>=0">La combinación es: {{numero1.digito}} {{numero2.digito}}</p>
+        <button class="btn btn-primary" (click)="numero1.obtenAleatorio();numero2.obtenAleatorio()">Obtener número</button>
+        <hr>
+        <app-generate-lottery entrada="1323"></app-generate-lottery>
+        <app-generate-lottery [objetoEntrada]="objetoEntrada"></app-generate-lottery>
+    </div>
+</div>

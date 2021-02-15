@@ -10,6 +10,7 @@ import { Nota } from 'src/app/models/nota';
 })
 export class CrudLocalComponent implements OnInit {
 
+  editar: boolean = false;
   notaNueva: Nota = new Nota();
   notas: Nota[] = [];
   indice: number = -1;
@@ -18,7 +19,7 @@ export class CrudLocalComponent implements OnInit {
   //Coches
   coches: Coche[] = [];
   cocheNuevo: Coche = new Coche();
-  indice_coche: number = -1;
+  indice_coche: number = 1;
   cocheSel: Coche = new Coche();
 
   constructor() { }
@@ -89,7 +90,7 @@ export class CrudLocalComponent implements OnInit {
   }
 
   eliminarCoche(): void {
-    if(confirm("Quieres eliminar el coche" + this.cocheSel.marca + "?")){
+    if(confirm("Quieres eliminar el coche: " + this.cocheSel.marca + "?")){
       for(let i in this.coches){
         if(this.coches[i].id==this.cocheSel.id){
           this.coches.splice(parseInt(i),1);

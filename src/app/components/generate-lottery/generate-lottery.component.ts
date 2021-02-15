@@ -7,10 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class GenerateLotteryComponent implements OnInit {
 
-  digito: number;
+  digito: number = undefined;
 
-  @Input() entrada: number 
-  @Input() objetoEntrada = {nombre: "", apellido: ""}; 
+  @Input() entrada: number = null;
+  @Input() objetoEntrada: {nombre:string, apellido:string}; 
 
   constructor() { }
 

@@ -1,3 +1,3 @@
-<h5>{{digito}}</h5>
-<p>Mi padre me pasa este número {{entrada}}</p>
-<p>Este es el objeto que me pasa mi padre {{objetoEntrada.apellido}}</p>
+<p class="text-center h4"> {{digito}}</p>
+<p *ngIf="entrada">Mi padre me pasa este número {{entrada}} </p>
+<p *ngIf="objetoEntrada">Éste es el objeto que me pasa mi padre: {{objetoEntrada.apellido}} </p>
