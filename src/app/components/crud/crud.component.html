@@ -1,44 +1,43 @@
-<ul>
-    <li [ngClass]='{"text-white bg-dark":nota.idUser}' *ngFor="let nota of notas"
-     (click)="nota.idUser ? formNuevo.patchValue(nota) : formNuevo.reset()">{{nota.titulo}} {{nota.contenido}}
-    </li>
-</ul>
-<br>
-<div class="alert alert-primary" *ngIf="notaCreada" role="alert">
-    <strong>Nota creada correctamente</strong>
-</div>
-<h5>Formulario con formGroup</h5>
-<form [formGroup]="formNuevo" (ngSubmit)="crearNota(formNuevo.value)">
-    <input class="form-control" type="text" formControlName="titulo" placeholder="Título">
-    <input class="form-control" type="text" formControlName="contenido" placeholder="Contenido">
-    <button *ngIf="!formNuevo.value.id; else editar" type="submit" [disabled]="formNuevo.invalid">Crear una nota</button>
-    <ng-template #editar>
-        <button type="button" [disabled]="!formNuevo.value.id" (click)="eliminarNota()">Eliminar una nota</button>
-        <button type="button" [disabled]="formNuevo.invalid" (click)="editarNota()">Editar una nota</button>
-        <button type="button" (click)="formNuevo.reset()">Cancelar</button>
-    </ng-template>
-</form>
-<hr>
-<h5>Formulario con ngModel</h5>
-<div class="input-group">
-    <input class="form-control" type="text" [(ngModel)]="notaNueva.titulo" placeholder="Título">
-    <input class="form-control" type="text" [(ngModel)]="notaNueva.contenido" placeholder="Contenido">
-    <button class="btn btn-primary btn-block" (click)="crearNota(notaNueva)">Insertar Nota</button>
-</div>
-<h5>Búsqueda de notas</h5>
-<div class="input-group">
-    <input (input)="buscarConRetraso()" class="form-control" type="text" [(ngModel)]="busqueda" placeholder="Buscar">
-    <button class="btn btn-primary btn-block" (click)="buscarNotas()">Buscar Nota</button>
-</div>
-
-
-
-<div class="card">
+<div class="card mx-auto m-4" style="width: 70vh;">
     <div class="card-header">
-        <h4 class="card-title">Title</h4>
+        <h4 class="card-title text-center">CRUD</h4>
     </div>
     <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Text</p>
+        <ul class="list-group">
+            <li class="list-group-item" [ngClass]='{"text-white bg-dark":nota.idUser}' *ngFor="let nota of notas"
+                (click)="nota.idUser ? formNuevo.patchValue(nota) : formNuevo.reset()">{{nota.titulo}}
+                {{nota.contenido}}
+            </li>
+        </ul>
+        <hr>
+        <div class="alert alert-primary" *ngIf="notaCreada" role="alert">
+            <strong>Nota creada correctamente</strong>
+        </div>
+        <h5>Formulario con formGroup</h5>
+        <form [formGroup]="formNuevo" (ngSubmit)="crearNota(formNuevo.value)">
+            <input class="form-control" type="text" formControlName="titulo" placeholder="Título">
+            <input class="form-control" type="text" formControlName="contenido" placeholder="Contenido">
+            <button class="btn btn-primary btn-block" *ngIf="!formNuevo.value.id; else editar" type="submit" [disabled]="formNuevo.invalid">Crear una
+                nota</button>
+            <ng-template #editar>
+                <button class="btn btn-primary btn-block" type="button" [disabled]="!formNuevo.value.id" (click)="eliminarNota()">Eliminar una
+                    nota</button>
+                <button class="btn btn-primary btn-block" type="button" [disabled]="formNuevo.invalid" (click)="editarNota()">Editar una nota</button>
+                <button class="btn btn-primary btn-block" type="button" (click)="formNuevo.reset()">Cancelar</button>
+            </ng-template>
+        </form>
+        <hr>
+        <h5>Formulario con ngModel</h5>
+        <div>
+            <input class="form-control" type="text" [(ngModel)]="notaNueva.titulo" placeholder="Título">
+            <input class="form-control" type="text" [(ngModel)]="notaNueva.contenido" placeholder="Contenido">
+            <button class="btn btn-primary btn-block" [disabled]="notaNueva.contenido==''||notaNueva.contenido==null" (click)="crearNota(notaNueva)">Insertar Nota</button>
+        </div>
+        <h5>Búsqueda de notas</h5>
+        <div class="input-group">
+            <input (input)="buscarConRetraso()" class="form-control" type="text" [(ngModel)]="busqueda"
+                placeholder="Buscar">
+           <!-- <button class="btn btn-primary btn-block" (click)="buscarNotas()">Buscar Nota</button>-->
+        </div>
     </div>
 </div>

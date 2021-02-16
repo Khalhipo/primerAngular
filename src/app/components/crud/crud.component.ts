@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Nota } from 'src/app/models/nota';
 import { Note } from 'src/app/models/note';
 import { NotasService } from 'src/app/services/notas.service';
 
@@ -41,6 +42,7 @@ export class CrudComponent implements OnInit {
       respuesta => {
       console.log(respuesta);
       this.formNuevo.reset();
+      this.notaNueva = new Nota();
       this.obtenerNotas();
       this.notaCreada = true;
       setTimeout(() => {

@@ -31,16 +31,9 @@ export class NotasService {
   editarNota(nota: Note): Observable<any> {
     return this.http.put(url,nota);
   }
-/*
-Esta sería para SEQUELIZE
+
   borrarNota(id: number): Observable<any> {
     return this.http.delete(url+id);
-  }
-*/
-
-//Esta para backendphp
-  borrarNota(id: number): Observable<any> {
-    return this.http.delete(url+'?id='+id);
   }
 
   buscarNotas(entrada: string): Observable<any> {

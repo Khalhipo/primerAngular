@@ -27,7 +27,7 @@
         <input class="form-control" type="text" [(ngModel)]="cocheNuevo.marca" placeholder="Marca">
         <input class="form-control" type="text" [(ngModel)]="cocheNuevo.modelo" placeholder="Modelo">
         <input class="form-control" type="text" [(ngModel)]="cocheNuevo.cv" placeholder="CV">
-        <button class="btn btn-primary btn-block mt-2" (click)="insertarCoche()">Insertar coche</button>
+        <button [disabled]="deshabilitar()" class="btn btn-primary btn-block mt-2" (click)="insertarCoche()">Insertar coche</button>
     </div>
     <div *ngIf="cocheSel.marca" class="card-body">
         <hr>

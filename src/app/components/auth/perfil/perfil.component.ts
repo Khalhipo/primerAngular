@@ -43,6 +43,9 @@ export class PerfilComponent implements OnInit {
       respuesta => {
         console.log(respuesta);
         this.perfil = respuesta;
+        if(this.perfil.imgSrc==null){
+          this.perfil.imgSrc = "assets/images/foto_perfil.jpg";
+        }
         this.formPerfil.patchValue(respuesta);
       },
       error => console.log(error) 

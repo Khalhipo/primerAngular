@@ -1,12 +1,12 @@
-<p>Formulario con FormBuilder</p>
+<div class="mx-auto">
 <div class="alert alert-danger" role="alert" *ngIf="mensaje">
     <strong>{{mensaje}}</strong>
 </div>
 <form [formGroup]="formRegister" (submit)="submit()">
     <input type="text" formControlName="nombre" placeholder="Nombre"><br>
     <input type="text" formControlName="apellidos" placeholder="Apellidos"><br>
-    <input type="text" formControlName="password" placeholder="Password"><br>
-    <input type="text" formControlName="password2" placeholder="Repite Password"><br>
+    <input type="password" formControlName="password" placeholder="Password"><br>
+    <input type="password" formControlName="password2" placeholder="Repite Password"><br>
     <input type="text" formControlName="email" placeholder="Email"><br>
     <input type="text" formControlName="dni" placeholder="Dni"><br>
     <input type="text" formControlName="telefono" placeholder="Teléfono"><br>
@@ -43,5 +43,4 @@
     <div *ngIf="telefono1.errors.telefono"><p>El teléfono no es correcto</p></div>
     <div *ngIf="telefono1.errors.pattern"><p>El formato del teléfono no es correcto</p></div>
 </div>
-
-
+</div>

@@ -9,7 +9,7 @@
         <input class="form-control" type="text" [(ngModel)]="user.nombre" placeholder="Nombre">
         <input class="form-control" type="text" [(ngModel)]="user.apellido" placeholder="Apellido">
         <input class="form-control" type="number" [(ngModel)]="user.edad" placeholder="Edad">
-        <button class="btn btn-primary btn-block" (click)="insertar()">Insertar</button>
+        <button [disabled]="deshabilitar()" class="btn btn-primary btn-block" (click)="insertar()">Insertar</button>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item" *ngFor="let user of users" (click)="addP(user)">{{user.nombre}} {{user.apellido}} {{user.edad}}</li>

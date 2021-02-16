@@ -28,6 +28,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { PerfilComponent } from './components/auth/perfil/perfil.component';
 import { RegistroComponent } from './components/auth/registro/registro.component';
 import { EnviarTokenInterceptor } from './auth/enviar-token.interceptor';
+import { ListarUsuariosComponent } from './components/listar-usuarios/listar-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { EnviarTokenInterceptor } from './auth/enviar-token.interceptor';
     CrudComponent,
     LoginComponent,
     PerfilComponent,
-    RegistroComponent
+    RegistroComponent,
+    ListarUsuariosComponent
   ],
   imports: [
     BrowserModule,

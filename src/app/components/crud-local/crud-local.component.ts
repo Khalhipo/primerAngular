@@ -101,4 +101,13 @@ export class CrudLocalComponent implements OnInit {
     }
   }
 
+  deshabilitar(): boolean {
+      if(
+      (this.cocheNuevo.marca==null || this.cocheNuevo.marca=="") ||
+      (this.cocheNuevo.modelo==null ||  this.cocheNuevo.modelo=="")
+      ){
+          return true;
+    }
+    return false;
+}
 }

@@ -1,9 +1,12 @@
+<div id="container-login" class="container" style="width: 100vh; height: 100vh;">
+<div id="login">
 <div class="alert alert-danger" role="alert" *ngIf="mensaje">
     <strong>{{mensaje}}</strong>
 </div>
 <form [formGroup]="formLogin" (submit)="submit()">
     <input type="text" formControlName="email" placeholder="Email"><br>
-    <input type="text" formControlName="password" placeholder="Password"><br>
-    <button [disabled]="formLogin.invalid" type="submit">Login</button>
+    <input type="password" formControlName="password" placeholder="Password"><br>
+    <button class="btn btn-primary btn-block" [disabled]="formLogin.invalid" type="submit">Login</button>
 </form>
-
+</div>
+</div>

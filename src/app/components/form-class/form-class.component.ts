@@ -32,4 +32,15 @@ export class FormClassComponent implements OnInit {
     
   }
 
+  deshabilitar(): boolean {
+    if(this.user.nombre==null || this.user.nombre=="" ){
+      if(this.user.apellido==null || this.user.apellido==""){
+        if(this.user.edad==null ||  isNaN(this.user.edad)){
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
 }

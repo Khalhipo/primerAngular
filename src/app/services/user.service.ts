@@ -43,6 +43,10 @@ SEQUALIZE
     return this.http.delete(url);
   }
 
+  listarUsuario(): Observable<any> {
+    return this.http.get(url+'/listar');
+  }
+
   //Solo para backend PHP
   subirImagen(entrada): Observable<any> {
     return this.http.post(url+'image/',entrada);
