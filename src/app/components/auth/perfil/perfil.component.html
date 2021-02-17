@@ -2,7 +2,9 @@
 <div class="card">
     <div class="card-header h5 text-center">Mi Perfil</div>
     <div class="card-body">
-
+        <div class="alert alert-danger" role="alert" *ngIf="mensaje">
+            <strong>{{mensaje}}</strong>
+        </div>
         <div class="row">
     <div class="col-md-6">
         <strong>Nombre:</strong>
@@ -56,4 +58,23 @@
 <!--Con parámetros-->
 <input type="file" (change)="tengoFoto($event)">
 <button class="btn btn-primary btn-block" type="button" (click)="subirFoto()">Subir imagen por parámetro</button>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Mensajes recibidos</h4>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li *ngFor="let mensaje of mensajesUsuario" class="list-group-item">
+            {{mensaje.id}}
+            {{mensaje.idDestinatario}}
+            {{mensaje.idRemitente}}
+            {{mensaje.mensaje}}
+            <button (click)="borrarMensaje(mensaje.id)" class="btn btn-danger">Borrar</button>
+        </li>
+    </ul>
+</div>
+
+<div class="form-group">
+
 </div>

@@ -44,7 +44,7 @@ SEQUALIZE
   }
 
   listarUsuario(): Observable<any> {
-    return this.http.get(url+'/listar');
+    return this.http.get(url+'list');
   }
 
   //Solo para backend PHP
