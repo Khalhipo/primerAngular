@@ -1,12 +1,21 @@
 <div id="container-login" class="container" style="width: 100vh; height: 100vh;">
 <div id="login">
+
+<div class="card">
+    <div class="card-header h5 text-center">Login</div>
+    <div class="card-body">
+        <form [formGroup]="formLogin" (submit)="submit()">
+            <input class="form-control" type="text" formControlName="email" placeholder="Email"><br>
+            <input class="form-control" type="password" formControlName="password" placeholder="Password"><br>
+            <button class="btn btn-primary btn-block" [disabled]="formLogin.invalid" type="submit">Login</button>
+        </form>
+    </div>
+</div>
 <div class="alert alert-danger" role="alert" *ngIf="mensaje">
     <strong>{{mensaje}}</strong>
 </div>
-<form [formGroup]="formLogin" (submit)="submit()">
-    <input type="text" formControlName="email" placeholder="Email"><br>
-    <input type="password" formControlName="password" placeholder="Password"><br>
-    <button class="btn btn-primary btn-block" [disabled]="formLogin.invalid" type="submit">Login</button>
-</form>
 </div>
 </div>
+
+
+

@@ -1,3 +1,5 @@
+<div class="row">
+    <div class="col-md-6">
 <div class="mx-auto m-4" style="width: 70vh;">
 <div class="card">
     <div class="card-header h5 text-center">Mi Perfil</div>
@@ -23,7 +25,7 @@
          </div>
         </div>
         <button class="btn btn-primary btn-block" (click)="mostrarEditar=!mostrarEditar;">Editar usuario</button>
-        <button class="btn btn-primary btn-block" (click)="mostrarEliminar=!mostrarEliminar;">Eliminar usuario</button>
+        <button class="btn btn-danger btn-block" (click)="mostrarEliminar=!mostrarEliminar;">Eliminar usuario</button>
     </div>
 </div>
 <div class="card">
@@ -44,37 +46,42 @@
 <div class="card" *ngIf="mostrarEliminar">
     <div class="card-header h5 text-center">Para eliminar tu perfil introduce tu email</div>
     <div class="card-body">
-        <input type="text" [(ngModel)]="inputBorrar" placeholder="Email...">
+        <input class="form-control" type="text" [(ngModel)]="inputBorrar" placeholder="Email...">
         <button class="btn btn-primary btn-block" (click)="mostrarEliminar=!mostrarEliminar; inputBorrar=''">Cancelar</button>
-        <button class="btn btn-primary btn-block" (click)="eliminarUsuario()" [disabled]="inputBorrar!=perfil.email">Eliminar</button>
+        <button class="btn btn-danger btn-block" (click)="eliminarUsuario()" [disabled]="inputBorrar!=perfil.email">Eliminar</button>
     </div>
-</div>
-
-<form [formGroup]="formImagen" (submit)="subirImagen()">
-    <input type="file" formControlName="imagen" (change)="cambiaImagen($event)">
-    <button class="btn btn-primary btn-block" type="submit">Subir imagen de perfil</button>
-</form>
-<hr>
-<!--Con parámetros-->
-<input type="file" (change)="tengoFoto($event)">
-<button class="btn btn-primary btn-block" type="button" (click)="subirFoto()">Subir imagen por parámetro</button>
 </div>
 
 <div class="card">
-    <div class="card-header">
-        <h4 class="card-title">Mensajes recibidos</h4>
+    <div class="card-header h5 text-center">Añadir imagen</div>
+    <div class="card-body">
+        <form [formGroup]="formImagen" (submit)="subirImagen()">
+            <input type="file" formControlName="imagen" (change)="cambiaImagen($event)">
+            <button class="btn btn-primary btn-block" type="submit">Subir imagen de perfil</button>
+        </form>
+        <hr>
+        <!--Con parámetros-->
+        <input type="file" (change)="tengoFoto($event)">
+        <button class="btn btn-primary btn-block" type="button" (click)="subirFoto()">Subir imagen por parámetro</button>        
+    </div>
+</div>
+
+
+
+</div>
+</div>
+<div class="col-md-6">
+<div class="card mx-auto m-4">
+    <div class="card-header h5 text-center">Mensajes recibidos
     </div>
     <ul class="list-group list-group-flush">
+        <li *ngIf="mensajesUsuario.length == 0" class="list-group-item">No hay mensajes</li>
         <li *ngFor="let mensaje of mensajesUsuario" class="list-group-item">
-            {{mensaje.id}}
-            {{mensaje.idDestinatario}}
-            {{mensaje.idRemitente}}
+            <strong>Usuario {{mensaje.idRemitente}}:</strong> 
             {{mensaje.mensaje}}
-            <button (click)="borrarMensaje(mensaje.id)" class="btn btn-danger">Borrar</button>
+            <button (click)="borrarMensaje(mensaje.id)" class="btn btn-danger" style="float: right;">Borrar</button>
         </li>
     </ul>
 </div>
-
-<div class="form-group">
-
+</div>
 </div>

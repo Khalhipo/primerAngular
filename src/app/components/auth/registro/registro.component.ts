@@ -42,7 +42,7 @@ export class RegistroComponent implements OnInit {
         }
       );
     }
-    else alert("Las contraseñas no coinciden");
+    else this.mensaje = "Las contraseñas no coinciden";
   }
 
   get nombre1(){

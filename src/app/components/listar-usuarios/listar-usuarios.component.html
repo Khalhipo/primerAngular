@@ -1,5 +1,5 @@
 <!--Que salga el nombre, y al pinchar en el nombre salga toda la información-->
-<div class="mx-auto m-4" style="width: 70vh;">
+<div class="mx-auto m-4" style="width: 60vh;">
 <div class="card">
     <div class="card-header">
         <h4 class="card-title">Lista de usuarios</h4>
@@ -12,14 +12,15 @@
 </div>
 </div>
 
-<div class="card mx-auto m-4" style="width: 70vh;" *ngIf="userSelected">
-    <img class="card-img-top" src="holder.js/100x180/" alt="">
+<div class="card mx-auto m-4" style="width: 60vh;" *ngIf="userSelected">
     <div class="card-body">
-        <h4 class="card-title">Nombre</h4>
+        <h5 class="card-title">Email</h5>
+        <p class="card-text">{{userSelected.email}}</p>
+        <h5 class="card-title">Nombre</h5>
         <p class="card-text">{{userSelected.nombre}}</p>
-        <h4 class="card-title">Apellidos</h4>
+        <h5 class="card-title">Apellidos</h5>
         <p class="card-text">{{userSelected.apellidos}}</p>
-        <h4 class="card-title">Teléfono</h4>
+        <h5 class="card-title">Teléfono</h5>
         <p class="card-text">{{userSelected.telefono}}</p>
         <img src="{{userSelected.imgSrc ? userSelected.imgSrc : 'assets/images/foto_perfil.jpg'}}" width="40px">
     </div>

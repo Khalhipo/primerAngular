@@ -20,7 +20,7 @@
             <button class="btn btn-primary btn-block" *ngIf="!formNuevo.value.id; else editar" type="submit" [disabled]="formNuevo.invalid">Crear una
                 nota</button>
             <ng-template #editar>
-                <button class="btn btn-primary btn-block" type="button" [disabled]="!formNuevo.value.id" (click)="eliminarNota()">Eliminar una
+                <button class="btn btn-danger btn-block" type="button" [disabled]="!formNuevo.value.id" (click)="eliminarNota()">Eliminar una
                     nota</button>
                 <button class="btn btn-primary btn-block" type="button" [disabled]="formNuevo.invalid" (click)="editarNota()">Editar una nota</button>
                 <button class="btn btn-primary btn-block" type="button" (click)="formNuevo.reset()">Cancelar</button>
