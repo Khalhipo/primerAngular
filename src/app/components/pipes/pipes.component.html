@@ -1,4 +1,6 @@
-<div class="card mx-auto text-center m-4" style="width: 59vh;">
+<div class="row">
+    <div class="col-md-6">
+<div class="card text-center m-4" style="">
     <div class="card-header">
         <h4 class="card-title">Con las tuberías o pipes podemos filtrar los datos a mostrar</h4>
     </div>
@@ -13,8 +15,19 @@
         <h5 class="card-title">Número redondeado:</h5><li class="list-group-item">{{numero_pi |number: ".3"}}</li>
         <h5 class="card-title">Seleccionar elementos de un array:</h5><li class="list-group-item">{{preposiciones |slice:2:5}}</li>
         <h5 class="card-title">Convertir objeto a formato json:</h5><li class="list-group-item">{{usuarios |json}}</li>
-        <h5 class="card-title">El cuadrado del 5 es</h5><li class="list-group-item">{{5|nums: "cuadrado" }}</li>
-        <h5 class="card-title">La raíz cuadrada de 81 es</h5><li class="list-group-item">{{81|nums: "raiz" }}</li>
-        <h5 class="card-title">El número 6 en letras es:</h5><li class="list-group-item">{{6|nums: "aletras"}}</li>
     </ul>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card m-4 text-center">
+    <div class="card-header">
+        <h4 class="card-title">Tuberías personalizadas</h4>
+    </div>
+    <ul class="list-group list-group-flush">
+<h5 class="card-title">El cuadrado del 5 es</h5><li class="list-group-item">{{5|nums: "cuadrado" }}</li>
+<h5 class="card-title">La raíz cuadrada de 81 es</h5><li class="list-group-item">{{81|nums: "raiz" }}</li>
+<h5 class="card-title">El número 6 en letras es:</h5><li class="list-group-item">{{6|nums: "aletras"}}</li>
+</ul>
+</div>
+</div>
 </div>

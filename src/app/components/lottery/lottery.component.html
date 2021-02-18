@@ -1,5 +1,7 @@
 <div class="card  m-4 text-center mx-auto" style="width: 70vh;">
-    <div class="card-header">Comunicar componentes</div>
+    <div class="card-header">
+      <h4 class="card-title">Comunicar componentes</h4>
+    </div>
     <div class="card-body">
         <h5 class="card-title">Juguemos a la lotería!</h5>
         <div class="container">
@@ -12,7 +14,7 @@
               </div>
             </div>
           </div>
-        <p *ngIf="numero1.digito&&(numero1.digito==numero2.digito);else habibi">PREMIO</p>
+        <h4 *ngIf="numero1.digito&&(numero1.digito==numero2.digito);else habibi"><i class="fas fa-money-bill-alt"></i><i class="fas fa-money-bill-alt"></i>PREMIO<i class="fas fa-money-bill-alt"></i><i class="fas fa-money-bill-alt"></i></h4>
         <ng-template #habibi>
             <p *ngIf="numero1.digito>=0; else iniciar">SIGUE JUGANDO</p>
             <ng-template #iniciar>

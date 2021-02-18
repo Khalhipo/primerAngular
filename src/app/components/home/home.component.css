@@ -9,32 +9,55 @@
 
 #contenedor-texto {
     grid-area: texto;
-    border: 2px solid black;
     text-align: center;
+    box-shadow: 2px 2px 1px coral;
 }
 
 #contenedor-suma {
     grid-area: suma;
     text-align: center;
-    border: 2px solid black;
+    box-shadow: 2px 2px 1px coral;
 }
 
 #contenedor-arrayLetras {
     grid-area: letras;
     text-align: center;
-    border: 2px solid black;
     list-style-type: none;
+    box-shadow: 2px 2px 1px coral;
 }
 
 #contenedor-arrayObj {
     grid-area: obj;
     text-align: center;
-    border: 2px solid black;
     list-style: none;
     list-style-type:square;
+    box-shadow: 2px 2px 1px coral;
 }
 
 footer {
 height: 50px;
 text-align: center;
+}
+
+.jumbotron > * {
+    font-family: 'Alfa Slab One';
+}
+
+.jumbotron {
+    background-color: chartreuse;
+}
+
+.jumbotron:hover {
+    color: chartreuse;
+    background-color: #2F4F4F;
+}
+
+.card {
+    height: 50vh;
+    background-color: #5DEE5A;
+}
+
+.card:hover {
+    background-color: #2F4F4F;
+    color: #5DEE5A;
 }

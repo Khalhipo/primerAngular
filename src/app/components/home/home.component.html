@@ -4,7 +4,7 @@
     <hr class="my-2">
     <p>Más información</p>
     <p class="lead">
-        <a class="btn btn-primary btn-lg" routerLink="/about" role="button">About</a>
+        <a class="btn btn-success btn-lg" routerLink="/about" role="button">About</a>
     </p>
 </div>
 
@@ -33,9 +33,7 @@
             <input type="number" [(ngModel)]="num1"><br>
             <input type="number" [(ngModel)]="num2">
             <h3>{{num1+num2}}</h3>
-            <p *ngIf="num1 == 0">El num1 es un 0</p>
-        </div>
-        <div class="card-footer text-muted">
+           <!-- <p *ngIf="num1 == 0">El num1 es un 0</p>-->
         </div>
     </div>
 </div>
@@ -49,8 +47,6 @@
             <ul>
                 <li *ngFor="let letra of letras">{{letra}}</li>
             </ul>
-        </div>
-        <div class="card-footer text-muted">
         </div>
     </div>
 </div>
@@ -71,8 +67,6 @@
                 <li (click)="selUser(usuario)" *ngFor="let usuario of usuarios2">{{usuario.nombre + " " + usuario.apellido}}</li>
                 <p *ngIf="usuarioSeleccionado != null">El usuario seleccionado es {{usuarioSeleccionado.nombre + " " + usuarioSeleccionado.apellido}}</p>
             </ul>
-        </div>
-        <div class="card-footer text-muted">
         </div>
     </div>
 </div>

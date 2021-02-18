@@ -78,7 +78,8 @@
         <li *ngIf="mensajesUsuario.length == 0" class="list-group-item">No hay mensajes</li>
         <li *ngFor="let mensaje of mensajesUsuario" class="list-group-item">
             <strong>Usuario {{mensaje.idRemitente}}:</strong> 
-            {{mensaje.mensaje}}
+            {{mensaje.mensaje}}<br>
+            <strong style="font-size: 10px;">Enviado el {{mensaje.fecha |date}}</strong>
             <button (click)="borrarMensaje(mensaje.id)" class="btn btn-danger" style="float: right;">Borrar</button>
         </li>
     </ul>

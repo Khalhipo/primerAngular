@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-sm sticky-top navbar-light bg-light">
-    <a class="navbar-brand" href="#">Angular tutorial</a>
+    <a class="navbar-brand" href="#"><img style="width: 40px;" src="../../../assets/icon/logo_proyecto.png"> Angular tutorial</a>
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -7,34 +7,34 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-                <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/about">About</a>
+                <a class="nav-link" routerLink="/about"><i class="fas fa-info"></i> About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/lottery">Lottery</a>
+                <a class="nav-link" routerLink="/lottery"><i class="fas fa-dice-five"></i> Lottery</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/calculator">Calculator</a>
+                <a class="nav-link" routerLink="/calculator"><i class="fas fa-calculator"></i> Calculator</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/pipes">Pipes</a>
+                <a class="nav-link" routerLink="/pipes"><i class="fas fa-filter"></i> Pipes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/structures">Structures</a>
+                <a class="nav-link" routerLink="/structures"><i class="fas fa-cat"></i> Structures</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/form">Form Class</a>
+                <a class="nav-link" routerLink="/form"><i class="fab fa-wpforms"></i> Form Class</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/crudLocal">Crud Local</a>
+                <a class="nav-link" routerLink="/crudLocal"><i class="fas fa-car"></i> Crud Local</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/crud">Crud</a>
+                <a class="nav-link" routerLink="/crud"><i class="fas fa-marker"></i> Crud</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/listar">Listar</a>
+                <a class="nav-link" routerLink="/listar"><i class="fas fa-list"></i> List</a>
             </li>
         </ul>
         <ul class="navbar-nav mt-2 mt-lg-0">
@@ -45,18 +45,18 @@
             </li>
             -->
             <li class="nav-item">
-                <a class="nav-link" routerLink="/registro">Registro</a>
+                <a class="nav-link" routerLink="/registro"><i class="fas fa-user-plus"></i> Register</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/login">Login</a>
+                <a class="nav-link" routerLink="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
             </li>
         </ng-template>
         <ng-template #salir>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/perfil">Perfil</a>
+                <a class="nav-link" routerLink="/perfil"><i class="fas fa-id-badge"></i> Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" (click)="doLogout()" routerLink='.'>Logout</a>
+                <a class="nav-link" (click)="doLogout()" routerLink='.'><i class="fas fa-sign-out-alt"></i> Logout</a>
             </li>
         </ng-template>
         </ul>
