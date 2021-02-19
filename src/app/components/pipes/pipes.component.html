@@ -4,6 +4,7 @@
     <div class="card-header">
         <h4 class="card-title">Con las tuberías o pipes podemos filtrar los datos a mostrar</h4>
     </div>
+    <div class="card-body">
     <ul class="list-group list-group-flush">
         <h5 class="card-title">Convertir a mayúsculas:</h5><li class="list-group-item"> {{usuario |uppercase }}</li>
         <h5 class="card-title">Convertir a minúsculas:</h5><li class="list-group-item"> {{usuario |lowercase }}</li>
@@ -18,16 +19,19 @@
     </ul>
 </div>
 </div>
+</div>
 <div class="col-md-6">
 <div class="card m-4 text-center">
     <div class="card-header">
         <h4 class="card-title">Tuberías personalizadas</h4>
     </div>
+    <div class="card-body">
     <ul class="list-group list-group-flush">
 <h5 class="card-title">El cuadrado del 5 es</h5><li class="list-group-item">{{5|nums: "cuadrado" }}</li>
 <h5 class="card-title">La raíz cuadrada de 81 es</h5><li class="list-group-item">{{81|nums: "raiz" }}</li>
 <h5 class="card-title">El número 6 en letras es:</h5><li class="list-group-item">{{6|nums: "aletras"}}</li>
 </ul>
+</div>
 </div>
 </div>
 </div>

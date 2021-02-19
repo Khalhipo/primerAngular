@@ -4,7 +4,7 @@
     <hr class="my-2">
     <p>Más información</p>
     <p class="lead">
-        <a class="btn btn-success btn-lg" routerLink="/about" role="button">About</a>
+        <a class="btn btn-j btn-lg" routerLink="/about" role="button">About</a>
     </p>
 </div>
 
@@ -13,13 +13,13 @@
 <div id="contenedor-texto">
     <div class="card">
         <div class="card-header">
-            <h2>Prueba a introducir texto y sorpréndete con el resultado</h2>
+            <h4>Prueba a introducir texto y sorpréndete con el resultado</h4>
         </div>
         <div class="card-body">
             <input type="text" [(ngModel)]="variable">
         </div>
         <div class="card-footer text-muted">
-            <h3>{{variable}}</h3>
+            <h4>{{variable}}</h4>
         </div>
     </div>
 </div>
@@ -27,12 +27,12 @@
 <div id="contenedor-suma">
     <div class="card">
         <div class="card-header">
-            <h2>Prueba a introducir dos números y obtendrás la suma</h2>
+            <h4>Prueba a introducir dos números y obtendrás la suma</h4>
         </div>
         <div class="card-body">
             <input type="number" [(ngModel)]="num1"><br>
             <input type="number" [(ngModel)]="num2">
-            <h3>{{num1+num2}}</h3>
+            <h4>{{num1+num2}}</h4>
            <!-- <p *ngIf="num1 == 0">El num1 es un 0</p>-->
         </div>
     </div>
@@ -41,7 +41,7 @@
 <div id="contenedor-arrayLetras">
     <div class="card">
         <div class="card-header">
-            <h3>Con *ngFor puedes mostrar de forma fácil un Array de letras</h3>
+            <h4>Con *ngFor puedes mostrar de forma fácil un Array de letras</h4>
         </div>
         <div class="card-body">
             <ul>
@@ -54,7 +54,7 @@
 <div id="contenedor-arrayObj">
     <div class="card">
         <div class="card-header">
-            <h3>Con *ngFor también puedes mostrar Array de objetos</h3>
+            <h4>Con *ngFor también puedes mostrar Array de objetos</h4>
         </div>
         <div class="card-body">
             <ul>

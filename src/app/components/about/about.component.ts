@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class AboutComponent implements OnInit {
 
-  nombre: string;
-  apellidos: string;
+  nombre: string = '';
+  apellidos: string = '';
   dni: number;
 
   constructor(private irHacia: Router) { }

@@ -44,20 +44,44 @@ text-align: center;
 }
 
 .jumbotron {
-    background-color: chartreuse;
+    background-color: orange;
+    color: #8E239E;
 }
 
 .jumbotron:hover {
-    color: chartreuse;
-    background-color: #2F4F4F;
+    color: #8E239E;
+    background-color: #84EB42;
 }
 
 .card {
     height: 50vh;
-    background-color: #5DEE5A;
+    background-color: orange;
 }
 
 .card:hover {
-    background-color: #2F4F4F;
-    color: #5DEE5A;
+    background-color: #5DEE5A;
+}
+
+
+
+.card-header {
+    background-color:#9A239E;
+}
+
+.card-body {
+    background-color: #orange;
+}
+
+h4 {
+    color: white;
+}
+
+.btn-j {
+    background-color: white;
+    color: black;
+}
+
+button:hover {
+    color: black;
+    background-color: #EBB56C;
 }

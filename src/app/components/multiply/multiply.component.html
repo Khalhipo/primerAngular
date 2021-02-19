@@ -4,7 +4,7 @@
 
 <div class="card text-center mx-auto mt-3" style="width: 50vh;">
     <div class="card-header">
-        <strong><p class="">La tabla del {{factor}}</p></strong>
+        <strong><h4 class="">La tabla del {{factor}}</h4></strong>
     </div>
         <ul class="list-group list-group-flush" (click)="volverAcalculadora()">
             <strong><li class="list-group-item" *ngFor="let posicion of tabla; let i = index">{{factor}}*{{i}} = {{posicion}}</li></strong>

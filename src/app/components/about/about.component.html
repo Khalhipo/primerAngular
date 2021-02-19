@@ -1,7 +1,7 @@
 <div class="row justify-content-center m-4">
     <div class="col-md-6">
       <div class="card">
-        <h5 class="card-header">DNI</h5>
+        <h4 class="card-header">DNI</h4>
         <div class="card-body">
             <h5>Calcular letra del DNI</h5>
           <div class="input-group">
@@ -15,14 +15,14 @@
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card">
-        <h5 class="card-header">Saludar</h5>
+        <h4 class="card-header">Saludar</h4>
         <div class="card-body">
             <h5>Introduce tu nombre y apellidos</h5> 
           <div class="input-group">
             <input class="form-control" type="text" [(ngModel)]="nombre" placeholder="Tu nombre">
             <input class="form-control" type="text" [(ngModel)]="apellidos" placeholder="Tus apellidos">
           </div>
-          <button class="btn btn-primary btn-block" (click)="navegarHacia()">IR</button>
+          <button class="btn btn-primary btn-block" [disabled]="(nombre.length==0 || apellidos.length==0)" (click)="navegarHacia()">IR</button>
         </div>
       </div>
     </div>

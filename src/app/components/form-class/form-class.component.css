@@ -1,0 +1,25 @@
+.card-header {
+    background-color:#9A239E;
+}
+
+.card-body {
+    background-color: orange ;
+}
+
+h4 {
+    color: white;
+}
+
+button {
+    background-color: #84EB42;
+    color: black;
+}
+
+button:hover {
+    color: black;
+    background-color: #ACEB8A;
+}
+
+.list-group-item {
+    background-color: #84EB42;
+}

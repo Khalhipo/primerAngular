@@ -6,3 +6,34 @@
 a {
     text-decoration: none;
 }
+
+.card-header {
+    background-color:#9A239E;
+}
+
+.card-body {
+    background-color:orange;
+}
+
+h4 {
+    color: white;
+}
+
+a, button {
+    background-color:#84EB42;
+    color: black;
+}
+
+a:hover, button:hover {
+    color: black;
+    background-color: #ACEB8A;
+}
+
+
+.disabled, button:disabled {
+    background-color: white;
+    color: black;
+}
+
+
+ 
