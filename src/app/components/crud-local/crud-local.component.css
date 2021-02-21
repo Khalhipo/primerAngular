@@ -3,7 +3,7 @@
 }
 .card, 
 .card-body {
-    background-color: #84EB42;
+    background-color: orange;
 }
 
 h4 {
@@ -11,24 +11,37 @@ h4 {
 }
 
 button {
-    background-color: orange;
+    background-color: #84EB42;
     color: black;
 }
 
-button:hover {
-    color: black;
-    background-color: orangered;
-}
 
 .list-group-item {
-    background-color: orange;
+    background-color: #84EB42;
 }
 
 .btn-danger {
     background-color: red;
+    color: white;
 }
 
 thead, tbody {
-    background-color: orange;
+    background-color: #84EB42;
+}
+
+.disabled, button:disabled {
+    background-color: white;
+    color: black;
+}
+
+.btn-danger:hover {
+    background-color: lightcoral;
+
+}
+
+
+a:hover, button:hover {
+    color: black;
+    background-color: #ACEB8A;
 }
 

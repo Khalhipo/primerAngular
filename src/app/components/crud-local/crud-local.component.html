@@ -27,14 +27,14 @@
         <input class="form-control" type="text" [(ngModel)]="cocheNuevo.marca" placeholder="Marca">
         <input class="form-control" type="text" [(ngModel)]="cocheNuevo.modelo" placeholder="Modelo">
         <input class="form-control" type="text" [(ngModel)]="cocheNuevo.cv" placeholder="CV">
-        <button [disabled]="deshabilitar()" class="btn btn-primary btn-block mt-2" (click)="insertarCoche()">Insertar coche</button>
+        <button [disabled]="deshabilitar()" class="btn btn-block mt-2" (click)="insertarCoche()">Insertar coche</button>
     </div>
     <div *ngIf="cocheSel.marca" class="card-body">
         <hr>
         <input class="form-control" type="text" [(ngModel)]="cocheSel.marca" placeholder="Marca">
         <input class="form-control" type="text" [(ngModel)]="cocheSel.modelo" placeholder="Modelo">
         <input class="form-control" type="text" [(ngModel)]="cocheSel.cv" placeholder="CV">
-        <button class="btn  btn-block mt-2" (click)="editarCoche()">Editar coche</button>
+        <button class="btn btn-block mt-2" (click)="editarCoche()">Editar coche</button>
         <button class="btn btn-danger btn-block" (click)="eliminarCoche()">Eliminar coche</button>
     </div>
 </div>

@@ -4,8 +4,8 @@
     <div class="card-body">
         <div class="text-center"><input class="form-control mb-3" type="number" [(ngModel)]="num_entrada" placeholder="Introduce un número"></div>
         <div class="row">
-            <div class="col-md-6"><a [class.disabled]="!num_entrada" class="btn btn-primary" routerLink="/multiply/{{num_entrada}}">Mostrar tabla a través del RouterLink</a></div>
-            <div class="col-md-6"><button [disabled]="!num_entrada" class="btn btn-primary" (click)="navegarHacia(num_entrada)">Mostrar tabla a través del módulo Router</button></div>
+            <div class="col-md-6"><a [class.disabled]="!num_entrada" class="btn" routerLink="/multiply/{{num_entrada}}">Mostrar tabla a través del RouterLink</a></div>
+            <div class="col-md-6"><button [disabled]="!num_entrada" class="btn" (click)="navegarHacia(num_entrada)">Mostrar tabla a través del módulo Router</button></div>
     </div>
     </div>
 </div>

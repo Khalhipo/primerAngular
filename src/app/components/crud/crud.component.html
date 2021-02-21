@@ -17,13 +17,13 @@
         <form [formGroup]="formNuevo" (ngSubmit)="crearNota(formNuevo.value)">
             <input class="form-control" type="text" formControlName="titulo" placeholder="Título">
             <input class="form-control" type="text" formControlName="contenido" placeholder="Contenido">
-            <button class="btn btn-primary btn-block" *ngIf="!formNuevo.value.id; else editar" type="submit" [disabled]="formNuevo.invalid">Crear una
+            <button class="btn btn-block" *ngIf="!formNuevo.value.id; else editar" type="submit" [disabled]="formNuevo.invalid">Crear una
                 nota</button>
             <ng-template #editar>
                 <button class="btn btn-danger btn-block" type="button" [disabled]="!formNuevo.value.id" (click)="eliminarNota()">Eliminar una
                     nota</button>
-                <button class="btn btn-primary btn-block" type="button" [disabled]="formNuevo.invalid" (click)="editarNota()">Editar una nota</button>
-                <button class="btn btn-primary btn-block" type="button" (click)="formNuevo.reset()">Cancelar</button>
+                <button class="btn btn-block" type="button" [disabled]="formNuevo.invalid" (click)="editarNota()">Editar una nota</button>
+                <button class="btn btn-block" type="button" (click)="formNuevo.reset()">Cancelar</button>
             </ng-template>
         </form>
         <hr>
@@ -31,7 +31,7 @@
         <div>
             <input class="form-control" type="text" [(ngModel)]="notaNueva.titulo" placeholder="Título">
             <input class="form-control" type="text" [(ngModel)]="notaNueva.contenido" placeholder="Contenido">
-            <button class="btn btn-primary btn-block" [disabled]="notaNueva.contenido==''||notaNueva.contenido==null" (click)="crearNota(notaNueva)">Insertar Nota</button>
+            <button class="btn btn-block" [disabled]="notaNueva.contenido==''||notaNueva.contenido==null" (click)="crearNota(notaNueva)">Insertar Nota</button>
         </div>
         <h5>Búsqueda de notas</h5>
         <div class="input-group">

@@ -64,7 +64,7 @@
             <h6>For avanzado</h6>
             <ul>
                 <li *ngFor="let numero of [0,11,22,33,44,55]; let indice = index; let impar = odd; let primero = first;
-                 let ultimo = last; let cuenta = count" [ngClass]="{'text-danger':impar, 'bg-primary':primero}"
+                 let ultimo = last; let cuenta = count" [ngClass]="{'text-warning bg-dark':impar, 'bg-light':primero}"
                     (click)="muestraLog(numero,indice,cuenta)">
                     En la posición {{indice+1}} de {{cuenta}}, que es {{impar?"impar":"par"}}, está el número {{numero}}.
                     {{primero?"Que es el primero":""}}{{ultimo?"Que es el último":""}}
@@ -84,7 +84,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let numero of [0,11,22,33,44,55]; let indice = index; let impar = odd; let primero = first;
-                    let ultimo = last; let cuenta = count" [ngClass]="{'text-danger':impar, 'bg-primary':primero}"
+                    let ultimo = last; let cuenta = count" [ngClass]="{'text-warning bg-dark':impar, 'bg-light':primero}"
                         (click)="muestraLog(numero,indice,cuenta)">
                         <td>{{indice+1}}</td>
                         <td>{{cuenta}}</td>

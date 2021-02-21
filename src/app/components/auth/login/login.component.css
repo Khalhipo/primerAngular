@@ -1,0 +1,47 @@
+
+.card-header {
+    background-color:#9A239E;
+}
+.card, 
+.card-body {
+    background-color: orange;
+}
+
+h4 {
+    color: white;
+}
+
+button {
+    background-color: #84EB42;
+    color: black;
+}
+
+
+.list-group-item {
+    background-color: #84EB42;
+}
+
+.btn-danger {
+    background-color: red;
+    color: white;
+}
+
+thead, tbody {
+    background-color: #84EB42;
+}
+
+.disabled, button:disabled {
+    background-color: white;
+    color: black;
+}
+
+.btn-danger:hover {
+    background-color: lightcoral;
+
+}
+
+
+a:hover, button:hover {
+    color: black;
+    background-color: #ACEB8A;
+}
